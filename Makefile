@@ -8,6 +8,9 @@ version:
 init:
 	@$(call do_terraform,init)
 
+fmt:
+	@$(call do_terraform,fmt)
+
 plan:
 	@$(call do_terraform,plan)
 
