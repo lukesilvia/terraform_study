@@ -14,7 +14,3 @@ resource "aws_instance" "example" {
     Name = "exampl"
   }
 }
-
-output "example_instance_id" {
-  value = aws_instance.example.id
-}
