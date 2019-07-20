@@ -10,3 +10,6 @@ init:
 
 plan:
 	@$(call do_terraform,plan)
+
+apply:
+	@$(call do_terraform,apply)
