@@ -4,3 +4,9 @@ endef
 
 version:
 	@$(call do_terraform,version)
+
+init:
+	@$(call do_terraform,init)
+
+plan:
+	@$(call do_terraform,plan)
