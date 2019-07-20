@@ -1,0 +1,4 @@
+version: '3'
+services:
+  terraform:
+    image: hashicorp/terraform:light
