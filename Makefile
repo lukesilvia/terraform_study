@@ -16,3 +16,6 @@ plan:
 
 apply:
 	@$(call do_terraform,apply)
+
+destroy:
+	@$(call do_terraform,destroy)
