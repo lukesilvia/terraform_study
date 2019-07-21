@@ -6,20 +6,11 @@ locals {
   instance_type = "t2.micro"
 }
 
-data "template_file" "httpd_user_data" {
-  template = file("./user_data.sh.tpl")
-
-  vars = {
-    package = "httpd"
-  }
+module "dev_server" {
+  source = "./http_server"
+  instance_type = local.instance_type
 }
 
-resource "aws_instance" "example" {
-  ami           = "ami-0f9ae750e8274075b"
-  instance_type = local.instance_type
-  user_data = data.template_file.httpd_user_data.rendered
-
-  tags = {
-    Name = "example"
-  }
+output "public_dns" {
+  value = module.dev_server.public_dns
 }
