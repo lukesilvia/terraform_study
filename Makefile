@@ -1,3 +1,5 @@
+include .env
+
 define do_terraform
   docker-compose run --rm terraform $1
 endef
