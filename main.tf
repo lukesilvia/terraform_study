@@ -1,8 +1,8 @@
-module "dev_server" {
-  source = "./http_server"
+resource "aws_instance" "default" {
+  ami           = "ami-0f9ae750e8274075b"
   instance_type = local.instance_type
-}
 
-output "public_dns" {
-  value = module.dev_server.public_dns
+  tags = {
+    Name = "tf_test"
+  }
 }
